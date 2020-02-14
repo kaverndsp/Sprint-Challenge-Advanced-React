@@ -1,6 +1,7 @@
 import React from "react";
 import axios from "axios";
 
+
 class Players extends React.Component{
     state={
         players: []
@@ -19,12 +20,21 @@ componentDidMount(){
       })
 }
 
+
+
     render() {
         return(
-                <div>
-                    <h1>Players: </h1>
+                <div className="player-container">
+                  
+                    <h1 className="players">Players: </h1>
                    {this.state.players.map((item) => 
-                   <p>{item.name}</p>)}
+                   <>
+                   <div className="player-card">
+                   <h1>{item.name}</h1>
+                   <p>From: {item.country}</p>
+                   </div>
+                   </>
+                   )}
                 </div>
         )
     }
